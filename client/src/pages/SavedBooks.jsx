@@ -12,7 +12,7 @@ import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 
 // imports to refactor for graphql
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { GET_ME } from '../utils/queries';
 import { REMOVE_BOOK } from '../utils/mutations';
 

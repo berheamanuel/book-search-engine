@@ -1,4 +1,4 @@
-const { GraphQlError } = require('graphql')
+const { GraphQlError } = require('graphql');
 const jwt = require('jsonwebtoken');
 
 // set token secret and expiration date
@@ -12,9 +12,9 @@ module.exports = {
     },
   }),
   // function for our authenticated routes
-  authMiddleware: function (req, res, next) {
+  authMiddleware: function (req) {
     // allows token to be sent via  req.query or headers
-    let token = req.query.token || req.query.token || req.headers.authorization;
+    let token = req.query.token || req.headers.authorization;
 
     // ["Bearer", "<tokenvalue>"]
     if (req.headers.authorization) {
@@ -36,7 +36,7 @@ module.exports = {
     }
 
     // send to next endpoint
-    next();
+    // next();
   },
   signToken: function ({ username, email, _id }) {
     const payload = { username, email, _id };
