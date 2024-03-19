@@ -14,7 +14,7 @@ const LoginForm = () => {
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
 
-  const [login, { error }] = useMutation(LOGIN_USER);
+  const [login, { data, error }] = useMutation(LOGIN_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -31,20 +31,18 @@ const LoginForm = () => {
       event.stopPropagation();
     }
 
-    try {
-      // const response = await loginUser(userFormData);
-      // convert to mongo syntax
+    try {      
       const { data } = await login({
         variables: { ...userFormData },
       });
 
-      // if (!response.ok) {
-      //   throw new Error('something went wrong!');
-      // }
-
-      // const { token, user } = await response.json();
-      // console.log(user);
-      Auth.login(token.login.token);
+      if (!data) {
+        throw new Error('something went wrong!');
+      }
+     const { token, user} = await data.login;
+     
+     console.log(user);
+      Auth.login(token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
