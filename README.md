@@ -2,7 +2,14 @@
 
 ## Description
 
-This app is used to search books from google and save to the user account so that the user can see it agin
+This app is a MERN stack application used to search books from google and save to the user account so that the user can see it agin. 
+
+## Features
+
+* Sign up and log in
+* Search fot books
+* Save selected books
+* Delete saved Books
 
 ## User Story
 
@@ -46,16 +53,23 @@ WHEN I click on the Logout button
 THEN I am logged out of the site and presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button  
 ```
 
-## Mock-Up
+## Demo
+* [Link here](https://book-search-app-f644e1d935ac.herokuapp.com/)
 
-![](./Assets/21-mern-homework-demo-01.gif)
+## Screenshot
+![](./Assets/images/Screenshot%202024-03-19%20002733.png)
+![](./Assets/images/Screenshot%202024-03-19%20003054.png)
+![](./Assets/images/Screenshot%202024-03-19%20003134.png)
 
+## Technology Used
 
-## Installation
-
-
-
-### usage
+* JavaScript
+* Node.js
+* Express.js
+* MongoDB
+* React.js
+* GraphQL
+* JWT
 
 ## License
 
